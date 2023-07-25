@@ -26,7 +26,7 @@ export default function Home({ initialTime }) {
       const newDate = formatDate(now);
       if (newDate !== currentDate) {
         setCurrentDate(newDate);
-        setDayNum((prevDay) => prevDay + 1); // Increment the day by 1
+        setDayNum((prevDay) => (dayNum === 9 ? 1 : prevDay + 1)); // Increment the day by 1
       }
     }, 1000);
 
@@ -49,7 +49,7 @@ export default function Home({ initialTime }) {
               color = 'volcano';
             }
             return (
-              <Tag color={color} key={tag}>
+              <Tag color={''} key={tag}>
                 {tag.toUpperCase()}
               </Tag>
             );
